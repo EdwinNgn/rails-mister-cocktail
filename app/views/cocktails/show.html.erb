@@ -1,0 +1,74 @@
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @cocktail.image_url %>);">
+  <div class="big-title">
+    <h1> <%= @cocktail.name %></h1>
+  </div>
+  <div class="card-ingredient-form">
+    <div class="card card-dose" style="width: 25rem;">
+      <div class="card-body">
+        <h5 class="card-title">Ingredient</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+        <ul>
+          <% @cocktail.doses.each do |dose| %>
+            <li>
+              <%= "#{dose.description } | #{dose.ingredient.name}" %>
+              <%= link_to dose_path(dose), method: :delete  do %>
+                <i class="fas fa-trash delete"></i>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+        <p>
+          <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Add a dose</a>
+        </p>
+        <div class="row">
+          <div class="col">
+            <div class="collapse multi-collapse" id="multiCollapseExample1">
+              <div class="card card-body">
+                <div class="card card-form" >
+                  <div class="card-body">
+                    <%= simple_form_for [@cocktail, @dose] do |f| %>
+                      <%= f.input :description  %>
+                      <%= f.association :ingredient %>
+                      <%= f.button :submit, class: 'btn btn-primary w-100' %>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+

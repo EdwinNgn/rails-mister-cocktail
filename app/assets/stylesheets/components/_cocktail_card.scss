@@ -1,0 +1,48 @@
+.card-category {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  .dose-list{
+    font-size: 2vh;
+    font-weight: lighter;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding-left: 10px;
+  }
+}
+
+.hide{
+  display:none;
+}
+
+.card-category-more {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 5px;
+  right: 20px;
+  color: white;
+  opacity: 0.8;
+  font-weight: lighter;
+  font-size: 15px;
+
+  &:hover {
+    opacity: 1;
+    color: white;
+    text-decoration: none;
+
+  }
+}

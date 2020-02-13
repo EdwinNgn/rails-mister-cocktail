@@ -18,3 +18,17 @@
 import 'bootstrap';
 
 console.log('Hello World from Webpacker')
+
+const cards = document.querySelectorAll(".card-category")
+
+const addClassHide = (event) => {
+  event.currentTarget.firstElementChild.classList.toggle("hide");
+  event.currentTarget.childNodes[3].classList.toggle("hide");
+};
+
+const hideWhenHover = (card) => {
+  card.addEventListener("click", addClassHide);
+};
+
+cards.forEach(hideWhenHover);
+

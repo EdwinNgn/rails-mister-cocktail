@@ -1,0 +1,11 @@
+<nav class="navbar navbar-light bg-light py-3">
+  <%= link_to "Cocktails", cocktails_path, class: "navbar-brand"  %>
+  <!-- <a class="navbar-brand">Cocktails</a> -->
+  <div class="d-flex">
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <%= link_to "Add a cocktail", new_cocktail_path, class: 'btn btn-primary ml-2' %>
+  </div>
+</nav>
