@@ -2,8 +2,15 @@
   <div class="cocktail-name"><%= cocktail.name %></div>
   <div class="dose-list hide"><%= cocktail.name %>
     <ul>
-      <% cocktail.doses.each do |dose| %>
+      <% cocktail.doses.first(5).each do |dose| %>
         <li><%= "#{dose.description } | #{dose.ingredient.name}" %></li>
+      <% end %>
+      <% if cocktail.doses.size > 5 %>
+        <p>
+          <%= link_to cocktail_path(cocktail), class: "text-white" do %>
+            <strong><%= "and #{cocktail.doses.size - 5} more ingredients"%></strong>
+          <% end %>
+        </p>
       <% end %>
     </ul>
   </div>
