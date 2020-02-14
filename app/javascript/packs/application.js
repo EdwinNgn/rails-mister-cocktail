@@ -16,6 +16,8 @@
 // const imagePath = (name) => images(name, true)
 
 import 'bootstrap';
+import $ from 'jquery';
+import 'select2';
 
 console.log('Hello World from Webpacker')
 
@@ -31,4 +33,15 @@ const hideWhenHover = (card) => {
 };
 
 cards.forEach(hideWhenHover);
+
+$(document).ready(function() {
+    $('.js-example-basic-single').select2({
+      placeholder: "Select an ingredient",
+      });
+});
+
+
+
+
+
 

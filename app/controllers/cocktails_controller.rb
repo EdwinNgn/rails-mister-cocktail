@@ -1,6 +1,18 @@
 class CocktailsController < ApplicationController
   def index
-    @cocktails = Cocktail.all
+    if params[:ingredient_select].blank?
+      @cocktails = Cocktail.all
+    else
+      ingredient = Ingredient.where(name: params[:ingredient_select])
+      doses = Dose.where(ingredient: ingredient).to_a
+      @cocktails = []
+      doses.each do |dose|
+        @cocktails << dose.cocktail
+      end
+    end
+    # ingredient.where(name: ingredient_select)
+    #chercher les doses avec l'ingredient
+    #ajouter a l'array vide avec les dose.cocktail
   end
 
   def show

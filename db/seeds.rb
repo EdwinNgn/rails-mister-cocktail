@@ -13,7 +13,6 @@ def upload_image(url, photo_name, cocktail)
   cocktail.photo.attach(io: photo_file, filename: "#{photo_name}.jpg", content_type: 'image/jpg')
 end
 
-
 Cocktail.destroy_all
 Ingredient.destroy_all
 Dose.destroy_all

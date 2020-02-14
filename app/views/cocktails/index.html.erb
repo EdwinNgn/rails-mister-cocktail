@@ -1,6 +1,22 @@
 
 
+<div class="banner-home" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.pourlesnuls.fr/sites/pourlesnuls.edinul-pw01.msp.fr.clara.net/files/styles/image_couverture_article/public/cocktails_banniere.png?itok=tcOgw6Ym);">
+  <div class="container ">
+    <h1>Welcome to Cocktail Master!</h1>
+    <p>Discover our cocktails from all around the world!</p>
+    <form class="form-inline form-control-lg justify-content-center">
+      <select class="js-example-basic-single " name="ingredient_select">
+        <option></option>
+        <%= Ingredient.all.each do |ingredient| %>
+          <option value="<%= ingredient.name %>"><%= ingredient.name %></option>
+        <% end %>
+      </select>
+      <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
 
+      <button class="btn btn-primary my-1 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</div>
 
 <div class="container">
   <h2 class="py-5">Cocktails list</h2>
