@@ -19,11 +19,11 @@ cards.forEach(hideWhenHover);
 
 
 $(document).ready(function() {
-    $('.js-example-basic-single').select2({
-      placeholder: "Select an ingredient",
-      });
+  $(".js-example-basic-multiple-limit").select2({
+  maximumSelectionLength: 2,
+  placeholder: "Looking for an ingredient?"
+  });
 });
-
 
 
 
